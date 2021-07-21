@@ -19,3 +19,13 @@ is a tool for string formatting
     <img src=https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg alt="Node.js" width="30" height="30"/>
     <img src=https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg alt="Yarn" width="30" height="30"/>
 </div>
+
+## Start locally: 
+
+```bash 
+    yarn install
+```
+
+```bash
+    yarn test
+```
