@@ -1,4 +1,4 @@
-# Formatter
+# ✂️ ✨ Formatter
 
 is a tool for string formatting
 
