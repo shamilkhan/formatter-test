@@ -3,8 +3,20 @@ import { ErrorMessages } from './errorMessages';
 
 describe("Pass Simple strings or templates", () => {
 
-  it("Simple Formatter", () => {
+  it("Pass Empty string", () => {
+    expect(format("", {})).toBe("");
+  });
+
+  it("Pass string without templates", () => {
+    expect(format("foo bar", {})).toBe("foo bar");
+  });
+
+  it("Pass Template with variable", () => {
     expect(format("Hello, {name}!", { name: "world" })).toBe("Hello, world!");
+  });
+
+  it("Pass 2 templates", () => {
+    expect(format("{foo}, {bar}!", { foo: "Hello", bar: "Kitty" })).toBe("Hello, Kitty!");
   });
 
 });
