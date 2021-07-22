@@ -20,12 +20,19 @@ is a tool for string formatting
     <img src=https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg alt="Yarn" width="30" height="30"/>
 </div>
 
-## Start locally: 
+## Scripts: 
 
+Install Dependencies:
 ```bash 
     yarn install
 ```
 
+Development: 
+```bash
+    yarn dev
+```
+
+Run tests: 
 ```bash
     yarn test
 ```
