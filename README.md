@@ -25,17 +25,17 @@
 Install Dependencies:
 
 ```bash
-    yarn install
+  yarn install
 ```
 
 Development:
 
 ```bash
-    yarn dev
+  yarn dev
 ```
 
 Run tests:
 
 ```bash
-    yarn test
+  yarn test
 ```
