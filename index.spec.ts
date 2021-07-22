@@ -19,6 +19,10 @@ describe("Pass Simple strings or templates", () => {
     expect(format("{foo}, {bar}!", { foo: "Hello", bar: "Kitty" })).toBe("Hello, Kitty!");
   });
 
+  it("Pass Numeric and Boolean values as arguments", () => {
+    expect(format("{foo} {bar}", { foo: 42, bar: false })).toBe("42 false");
+  });
+
 });
 
 test("Nested Props", () => {
