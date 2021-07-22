@@ -1,6 +1,6 @@
 const getPath = (value: string, object: Record<string, unknown>) => {
   return object[value] ? [value] : value.split(".");
-}
+};
 
 const get = (object: Record<string, unknown>, initialPath: string) => {
   let result = object;
@@ -13,6 +13,6 @@ const get = (object: Record<string, unknown>, initialPath: string) => {
   }
 
   return result;
-}
+};
 
 export { get };
