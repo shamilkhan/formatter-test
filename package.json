@@ -1,5 +1,6 @@
 {
   "name": "formatter-test",
+  "description": "Formatter is a tool that allows you to create complex template strings",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Shamilkhan Akhmetzyanov <shamilkhan1999@gmail.com>",
