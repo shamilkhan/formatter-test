@@ -5,13 +5,16 @@ const OPEN_BRACKET = "{";
 const CLOSE_BRACKET = "}";
 
 const format = (path: string, object: Record<string, unknown>) => {
-  // Final Result
+  // The final result of `format` function
   let result = "";
-  // Check if current iteration is inside template `{}`
+  // Check if current iteration is inside a template `{}`
   let isInsideTemplate = false;
-  // Current string inside template
+  // Storage current string inside a template
   let currentPath = "";
 
+  /**
+   * @description Handle Errors
+   * */
   const handleErrors = (chart: string) => {
     if (chart === OPEN_BRACKET && isInsideTemplate) {
       throw new Error(ErrorMessages.duplicateOpenBracket);
