@@ -36,6 +36,14 @@ describe("Nested Props case", () => {
       })
     ).toBe("Hello, John Smith!");
   });
+
+  it("Access to properties on different levels of nesting", () => {
+    expect(
+      format("Hello, {user.name.first} {user.name.last} ({user.role})", {
+        user: { name: { first: "John", last: "Smith" }, role: "admin" },
+      })
+    ).toBe("Hello, John Smith (admin)");
+  });
 });
 
 describe("Handle Errors | Prevent Incorrect behavior", () => {
