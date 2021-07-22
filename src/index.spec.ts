@@ -1,8 +1,7 @@
 import { format } from ".";
-import { ErrorMessages } from './errorMessages';
+import { ErrorMessages } from "./errorMessages";
 
 describe("Pass Simple strings or templates", () => {
-
   it("Pass Empty string", () => {
     expect(format("", {})).toBe("");
   });
@@ -23,31 +22,31 @@ describe("Pass Simple strings or templates", () => {
     expect(format("{foo} {bar}", { foo: 42, bar: false })).toBe("42 false");
   });
 
+  it("Pass string with long white spaces", () => {
+    const stringWithWhiteSpaces = " Some string  with  __long__  white spaces ";
+    expect(format(stringWithWhiteSpaces, {})).toBe(stringWithWhiteSpaces);
+  });
 });
 
-test("Nested Props", () => {
-  expect(
-    format("Hello, {user.name.first} {user.name.last}!", {
-      user: { name: { first: "John", last: "Smith" } },
-    })
-  ).toBe("Hello, John Smith!");
-});
-
-test("Pass empty String", () => {
-  expect(format("", {})).toBe("");
-
-  const stringWithWhiteSpaces = " Some string  with  __long__  white spaces ";
-  expect(format(stringWithWhiteSpaces, {})).toBe(stringWithWhiteSpaces);
+describe("Nested Props case", () => {
+  it("Some nested Props case", () => {
+    expect(
+      format("Hello, {user.name.first} {user.name.last}!", {
+        user: { name: { first: "John", last: "Smith" } },
+      })
+    ).toBe("Hello, John Smith!");
+  });
 });
 
 describe("Handle Errors | Prevent Incorrect behavior", () => {
-
   it("Throw error for using close curly bracket before the opening one", () => {
-    expect(() => format("Hello }{world", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
+    expect(() => format("Hello }{world", {})).toThrowWithMessage(
+      Error,
+      ErrorMessages.closeBeforeOpen
+    );
   });
 
   it("Pass bunch of opening curly brackets", () => {
     expect(() => format("}}} {{{", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
   });
-
 });
