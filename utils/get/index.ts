@@ -7,12 +7,11 @@ const get = (object: Record<string, unknown>, initialPath: string) => {
   const path = getPath(initialPath, object);
 
   let index = 0;
-  const length = path.length
 
-  while (result !== null && index < length) {
+  while (result !== null && index < path.length) {
     result = result[path[index++]] as Record<string, unknown>;
   }
-  
+
   return result;
 }
 
