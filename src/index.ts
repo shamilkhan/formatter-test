@@ -23,9 +23,10 @@ const format = (path: string, object: Record<string, unknown>) => {
     }
   };
 
-  path.split("").forEach(chart => {
-    handleErrors(chart);
-
+  /**
+   * @description Change Current Result
+   * */
+  const mapChartToResult = (chart: string) => {
     if (chart === OPEN_BRACKET) {
       isInsideTemplate = true;
       currentPath = "";
@@ -38,6 +39,11 @@ const format = (path: string, object: Record<string, unknown>) => {
     } else {
       result += chart;
     }
+  };
+
+  path.split("").forEach(chart => {
+    handleErrors(chart);
+    mapChartToResult(chart);
   });
 
   return result;
