@@ -20,7 +20,14 @@ test("Pass empty String", () => {
   expect(format(stringWithWhiteSpaces, {})).toBe(stringWithWhiteSpaces);
 });
 
-test("Throw Error with incorrect strings", () => {
-  expect(() => format("Hello }{world", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
-  expect(() => format("}}} {{{", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
+describe("Handle Errors | Prevent Incorrect behavior", () => {
+
+  it("Throw error for using close curly bracket before the opening one", () => {
+    expect(() => format("Hello }{world", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
+  });
+
+  it("Pass bunch of opening curly brackets", () => {
+    expect(() => format("}}} {{{", {})).toThrowWithMessage(Error, ErrorMessages.closeBeforeOpen);
+  });
+
 });
