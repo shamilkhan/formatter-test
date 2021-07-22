@@ -12,14 +12,16 @@ const format = (path: string, object: Record<string, unknown>) => {
   // Current string inside template
   let currentPath = "";
 
-  path.split("").forEach(chart => {
+  const handleErrors = (chart: string) => {
     if (chart === openBracket && isInsideTemplate) {
       throw new Error(ErrorMessages.duplicateOpenBracket);
-    }
-
-    if (chart === closeBracket && !isInsideTemplate) {
+    } else if (chart === closeBracket && !isInsideTemplate) {
       throw new Error(ErrorMessages.closeBeforeOpen);
     }
+  };
+
+  path.split("").forEach(chart => {
+    handleErrors(chart);
 
     if (chart === openBracket) {
       isInsideTemplate = true;
