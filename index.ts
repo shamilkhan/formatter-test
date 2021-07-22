@@ -21,7 +21,7 @@ enum ErrorMessages {
 const openBracket = "{";
 const closeBracket = "}";
 
-const format = (path: string, object: unknown) => {
+const format = (path: string, object: Record<string, unknown>) => {
     // Final Result
     let result = "";
     // Check if current iteration is inside template `{}`
