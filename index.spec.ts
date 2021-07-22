@@ -1,8 +1,12 @@
 import { format } from ".";
 import { ErrorMessages } from './errorMessages';
 
-test("Simple Formatter", () => {
-  expect(format("Hello, {name}!", { name: "world" })).toBe("Hello, world!");
+describe("Pass Simple strings or templates", () => {
+
+  it("Simple Formatter", () => {
+    expect(format("Hello, {name}!", { name: "world" })).toBe("Hello, world!");
+  });
+
 });
 
 test("Nested Props", () => {
