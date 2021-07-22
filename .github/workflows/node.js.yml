@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm insall yarn --global
+    - run: npm install yarn --global
     - run: yarn install --frozen-lockfil
     - run: yarn test
