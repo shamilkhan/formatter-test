@@ -8,7 +8,7 @@ is a tool for string formatting
     // --> `Hello, John Smith`
     format("Hello, {user.name.first} {user.name.last}!", {
       user: { name: { first: "John", last: "Smith" } },
-    })<img src=https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg alt="html5" width="30" height="30"/>
+    })
 ```
 
 ## Build with 
