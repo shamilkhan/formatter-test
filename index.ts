@@ -1,22 +1,5 @@
-import { get } from "./utils/get";
-
-enum ErrorMessages {
-    /**
-     * @description Don't Forget to close 
-     * @example "{"
-     * */
-    noCloseBracket = "There is no close curly bracket after open one in string template",
-    /**
-     * @description Don't duplicate Opening Curly Bracket
-     * @example "{{"
-     * */
-    duplicateOpenBracket = "Don't duplicate open curly bracket",
-    /**
-     * @description Don't duplicate Opening Curly Bracket
-     * @example "}"
-     * */
-    closeBeforeOpen = "Close Before Open",
-};
+import { get } from "./get";
+import { ErrorMessages } from './errorMessages';
 
 const openBracket = "{";
 const closeBracket = "}";
@@ -56,4 +39,4 @@ const format = (path: string, object: Record<string, unknown>) => {
     return result;
 }
 
-export { format, ErrorMessages };
+export { format };

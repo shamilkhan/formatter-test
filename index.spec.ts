@@ -1,4 +1,5 @@
-import { format, ErrorMessages } from ".";
+import { format } from ".";
+import { ErrorMessages } from './errorMessages';
 
 test("Simple Formatter", () => {
   expect(format("Hello, {name}!", { name: "world" })).toBe("Hello, world!");
