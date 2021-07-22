@@ -5,6 +5,7 @@
   "author": "Shamilkhan Akhmetzyanov <shamilkhan1999@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "jest src/ --watch",
     "test": "jest src/",
     "prettier": "prettier --write src/**/*.ts",
     "prepare": "husky install"
