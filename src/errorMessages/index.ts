@@ -10,10 +10,10 @@ enum ErrorMessages {
    * */
   duplicateOpenBracket = "Don't duplicate open curly bracket",
   /**
-   * @description Don't duplicate Opening Curly Bracket
+   * @description Don't use close curly bracket before the open one
    * @example "}"
    * */
-  closeBeforeOpen = "Close Before Open",
+  closeBeforeOpen = "Don't use close curly bracket before the open one",
 }
 
 export { ErrorMessages };
