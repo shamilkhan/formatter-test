@@ -1,8 +1,8 @@
 import { get } from "./get";
 import { ErrorMessages } from "./errorMessages";
 
-const openBracket = "{";
-const closeBracket = "}";
+const OPEN_BRACKET = "{";
+const CLOSE_BRACKET = "}";
 
 const format = (path: string, object: Record<string, unknown>) => {
   // Final Result
@@ -13,9 +13,9 @@ const format = (path: string, object: Record<string, unknown>) => {
   let currentPath = "";
 
   const handleErrors = (chart: string) => {
-    if (chart === openBracket && isInsideTemplate) {
+    if (chart === OPEN_BRACKET && isInsideTemplate) {
       throw new Error(ErrorMessages.duplicateOpenBracket);
-    } else if (chart === closeBracket && !isInsideTemplate) {
+    } else if (chart === CLOSE_BRACKET && !isInsideTemplate) {
       throw new Error(ErrorMessages.closeBeforeOpen);
     }
   };
@@ -23,10 +23,10 @@ const format = (path: string, object: Record<string, unknown>) => {
   path.split("").forEach(chart => {
     handleErrors(chart);
 
-    if (chart === openBracket) {
+    if (chart === OPEN_BRACKET) {
       isInsideTemplate = true;
       currentPath = "";
-    } else if (chart === closeBracket && isInsideTemplate) {
+    } else if (chart === CLOSE_BRACKET && isInsideTemplate) {
       isInsideTemplate = false;
       result += get(object, currentPath);
       currentPath = "";
