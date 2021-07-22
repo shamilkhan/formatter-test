@@ -1,6 +1,6 @@
 # ✂️ ✨ Formatter
 
-is a tool for string formatting
+`Formatter` is a tool that allows you to create complex template strings
 
 ```ts
     // --> `Hello, world!`
